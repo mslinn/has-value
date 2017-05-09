@@ -4,7 +4,7 @@ name := "has-value"
 version := "1.0.0"
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 scalaVersion := "2.11.11"
-crossScalaVersions := Seq("2.10.6", scalaVersion.value, "2.12.2")
+crossScalaVersions := Seq("2.11.11", "2.12.2")
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -48,18 +48,3 @@ logLevel := Level.Warn
 logLevel in compile := Level.Warn
 
 sublimeTransitive := true
-
-// bintray settings
-bintrayOrganization := Some("micronautics")
-bintrayRepository := "scala"
-bintrayVcsUrl := Some(s"git@github.com:mslinn/${ name.value }.git")
-
-// sbt-site settings
-enablePlugins(SiteScaladocPlugin)
-siteSourceDirectory := target.value / "api"
-publishSite
-
-// sbt-ghpages settings
-enablePlugins(GhpagesPlugin)
-git.remoteRepo := s"git@github.com:mslinn/${ name.value }.git"
-

@@ -3,8 +3,8 @@ organization := "com.micronautics"
 name := "has-value"
 version := "1.0.0"
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
-scalaVersion := "2.11.8"
-crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.2")
+scalaVersion := "2.11.11"
+crossScalaVersions := Seq("2.10.6", scalaVersion.value, "2.12.2")
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -24,7 +24,7 @@ scalacOptions ++= Seq(
 scalacOptions in (Compile, doc) ++= baseDirectory.map {
   (bd: File) => Seq[String](
      "-sourcepath", bd.getAbsolutePath,
-     "-doc-source-url", "https://github.com/mslinn/has-value/tree/master€{FILE_PATH}.scala"
+     "-doc-source-url", "https://github.com/mslinn/{name.value}/tree/master€{FILE_PATH}.scala"
   )
 }.value
 
@@ -36,11 +36,7 @@ javacOptions ++= Seq(
   "-g:vars"
 )
 
-resolvers ++= Seq(
-)
-
 libraryDependencies ++= Seq(
-  //"com.github.nscala-time"  %% "nscala-time"   % "2.14.0" withSources(),
   "org.scalatest"     %% "scalatest"   % "3.0.1" % "test" withSources(),
   "junit"             %  "junit"       % "4.12"  % "test"
 )
@@ -51,21 +47,12 @@ logLevel := Level.Warn
 // This applies to both test:compile and compile and is Info by default
 logLevel in compile := Level.Warn
 
-// Level.INFO is needed to see detailed output when running tests
-logLevel in test := Level.Info
-
-// define the statements initially evaluated when entering 'console', 'console-quick', but not 'console-project'
-initialCommands in console := """
-                                |""".stripMargin
-
-cancelable := true
-
 sublimeTransitive := true
 
 // bintray settings
 bintrayOrganization := Some("micronautics")
 bintrayRepository := "scala"
-bintrayVcsUrl := Some("git@github.com:mslinn/has-value.git")
+bintrayVcsUrl := Some(s"git@github.com:mslinn/${ name.value }.git")
 
 // sbt-site settings
 enablePlugins(SiteScaladocPlugin)
@@ -74,5 +61,5 @@ publishSite
 
 // sbt-ghpages settings
 enablePlugins(GhpagesPlugin)
-git.remoteRepo := "git@github.com:mslinn/has-value.git"
+git.remoteRepo := s"git@github.com:mslinn/${ name.value }.git"
 

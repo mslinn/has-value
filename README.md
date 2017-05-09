@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/mslinn/has-value.svg?branch=master)](https://travis-ci.org/mslinn/has-value)
 [![GitHub version](https://badge.fury.io/gh/mslinn%2Fhas-value.svg)](https://badge.fury.io/gh/mslinn%2Fhas-value)
 
+Low-level project that just defines a trait used by other projects.
+
 ## Installation
 Add this to your project's `build.sbt`:
 

@@ -4,7 +4,7 @@ name := "has-value"
 version := "1.0.0"
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 scalaVersion := "2.11.11"
-crossScalaVersions := Seq("2.11.11", "2.12.2")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.2")
 
 scalacOptions ++= Seq(
   "-deprecation",

@@ -4,7 +4,7 @@ name := "has-value"
 version := "1.0.1"
 licenses +=  ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
 scalaVersion := "2.11.11"
-crossScalaVersions := Seq(scalaVersion.value, "2.12.3")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.4")
 
 scalacOptions ++= Seq(
   "-deprecation",

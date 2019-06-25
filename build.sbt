@@ -1,10 +1,10 @@
 organization := "com.micronautics"
 
 name := "has-value"
-version := "1.0.1"
+version := "1.1.0"
 licenses +=  ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"))
-scalaVersion := "2.11.11"
-crossScalaVersions := Seq(scalaVersion.value, "2.12.4")
+scalaVersion := "2.13.0"
+crossScalaVersions := Seq("2.11.11", "2.12.8", "2.13.0")
 
 scalacOptions ++= Seq(
   "-deprecation",
@@ -12,17 +12,11 @@ scalacOptions ++= Seq(
   "-feature",
   "-target:jvm-1.8",
   "-unchecked",
-  "-Ywarn-adapted-args",
-  "-Ywarn-dead-code",
-  "-Ywarn-numeric-widen",
-  "-Ywarn-unused",
-  "-Ywarn-value-discard",
-  "-Xfuture",
   "-Xlint"
 )
 
 scalacOptions in (Compile, doc) ++= baseDirectory.map {
-  (bd: File) => Seq[String](
+  bd: File => Seq[String](
      "-sourcepath", bd.getAbsolutePath,
      "-doc-source-url", "https://github.com/mslinn/has-value/tree/master€{FILE_PATH}.scala"
   )
@@ -37,8 +31,8 @@ javacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.scalatest"     %% "scalatest"   % "3.0.1" % "test" withSources(),
-  "junit"             %  "junit"       % "4.12"  % "test"
+  "org.scalatest"     %% "scalatest"   % "3.0.8" % Test withSources(),
+  "junit"             %  "junit"       % "4.12"  % Test
 )
 
 logLevel := Level.Warn

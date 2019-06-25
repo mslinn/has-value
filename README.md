@@ -13,7 +13,7 @@ Add this to your project's `build.sbt`:
 
     resolvers += "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"
 
-    libraryDependencies += "com.micronautics" %% "has-value" % "1.0.0" withSources()
+    libraryDependencies += "com.micronautics" %% "has-value" % "1.1.0" withSources()
 
 ## Scaladoc
 [Here](http://mslinn.github.io/has-value/latest/api/)

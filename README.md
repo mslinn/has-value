@@ -11,7 +11,7 @@ The trait is used in implementations of `model.persistence.Id`, required by
 ## Installation
 Add this to your project's `build.sbt`:
 
-    resolvers += "micronautics/scala on bintray" at "http://dl.bintray.com/micronautics/scala"
+    resolvers += "micronautics/scala on bintray" at "https://dl.bintray.com/micronautics/scala"
 
     libraryDependencies += "com.micronautics" %% "has-value" % "1.1.0" withSources()
 

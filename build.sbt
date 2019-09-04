@@ -37,6 +37,8 @@ libraryDependencies ++= Seq(
 
 logLevel := Level.Warn
 
+ThisBuild / turbo := true
+
 // Only show warnings and errors on the screen for compilations.
 // This applies to both test:compile and compile and is Info by default
 logLevel in compile := Level.Warn
